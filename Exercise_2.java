@@ -8,31 +8,41 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
-        } 
+	   this.data = data;
+	} 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        root == null ? true : false;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+   	StackNode node = new StackNode(data);
+	StackNode prevRoot = this.root;
+	this.root = node;
+	this.root.next = prevRoot;	
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+	if (this.isEmpty())  {
+    	  return 0;
+    	} else {
+    	  StackNode node = this.root;
+    	  this.root = this.root.next;
+    	  return node.data;
+    	}    
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        if (this.isEmpty())  {
+    	  return 0;
+    	} 
+	return this.root.data;
     } 
   
 	//Driver code
