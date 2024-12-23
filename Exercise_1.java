@@ -22,6 +22,7 @@ class Stack {
             return false;
         }
         a[++top] = x;
+        return true;
     } 
   
     int pop() 
