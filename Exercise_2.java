@@ -1,3 +1,5 @@
+//Time complexity : O(1) for push, pop, peek, isEmpty
+//space complexity : O(1) 
 public class StackAsLinkedList { 
   
     StackNode root; 
